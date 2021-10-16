@@ -24,4 +24,4 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-<a href="https://app.daily.dev/DailyDevTips"><img src="https://github.com/jana19-dev/jana19-dev/blob/main/devcard.svg" width="400" alt="Jana Rajakumar's Dev Card"/></a>
+<a href="https://app.daily.dev/jana19_dev"><img src="https://github.com/jana19-dev/jana19-dev/blob/main/devcard.svg" width="400" alt="Jana Rajakumar's Dev Card"/></a>
