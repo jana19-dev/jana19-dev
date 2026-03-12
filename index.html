@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jana Rajakumar — Software Architect | jana19.dev</title>
+  <meta name="description" content="Jana Rajakumar — Software Architect, Freelancer, and Entrepreneur based in Toronto, Canada. Building robust software systems that solve complex problems.">
+  <meta property="og:title" content="Jana Rajakumar — jana19.dev">
+  <meta property="og:description" content="Software Architect, Freelancer, and Entrepreneur based in Toronto, Canada.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jana19.dev">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: '#34d399',
+          }
+        }
+      }
+    }
+  </script>
+  <script>
+    // Theme toggle — respects system preference, persists choice
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    }
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-700 dark:text-gray-300 antialiased transition-colors duration-300">
+
+  <!-- Nav -->
+  <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800/50">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="font-mono font-bold text-lg">
+        <span class="text-gray-900 dark:text-white">jana</span><span class="text-emerald-500 dark:text-emerald-400">&lt;/&gt;</span>
+      </a>
+      <div class="flex items-center gap-6">
+        <div class="hidden sm:flex gap-8 text-sm text-gray-500 dark:text-gray-400">
+          <a href="#about" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">About</a>
+          <a href="#projects" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">Projects</a>
+          <a href="#experience" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">Experience</a>
+          <a href="#contact" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">Contact</a>
+        </div>
+        <!-- Theme toggle -->
+        <button onclick="toggleTheme()" class="text-gray-500 dark:text-gray-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors" aria-label="Toggle theme">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
+        <!-- Mobile menu button -->
+        <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="sm:hidden text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden sm:hidden border-t border-gray-200 dark:border-gray-800/50 bg-white/95 dark:bg-gray-950/95 backdrop-blur-sm">
+      <div class="flex flex-col px-6 py-4 gap-4 text-sm text-gray-500 dark:text-gray-400">
+        <a href="#about" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">About</a>
+        <a href="#projects" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">Projects</a>
+        <a href="#experience" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">Experience</a>
+        <a href="#contact" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="min-h-screen flex flex-col items-center justify-center px-6 text-center">
+      <h1 class="text-5xl md:text-7xl font-bold text-gray-900 dark:text-white mb-4">Jana Rajakumar</h1>
+      <p class="text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-6 max-w-xl">Software Architect, Freelancer &amp; Entrepreneur</p>
+
+      <div class="flex items-center gap-2 text-gray-400 dark:text-gray-500 mb-8">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+        </svg>
+        <span>Toronto, Canada</span>
+      </div>
+
+      <!-- Social Icons -->
+      <div class="flex gap-6">
+        <a href="https://github.com/jana19-dev" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors" aria-label="GitHub">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/jana19" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors" aria-label="LinkedIn">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/jana19.dev" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors" aria-label="Instagram">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-10 text-gray-400 dark:text-gray-600 animate-bounce">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-24 px-6">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-3">
+          <span class="text-emerald-500 dark:text-emerald-400 font-mono text-lg">//</span> About
+        </h2>
+        <div class="h-px bg-gray-200 dark:bg-gray-800 mb-8"></div>
+        <div class="space-y-4 text-gray-500 dark:text-gray-400 leading-relaxed">
+          <p>
+            I'm a software architect and entrepreneur based in Toronto, Canada. I thrive on architecting robust software systems that solve complex problems — from real-time web applications to large-scale archival platforms.
+          </p>
+          <p>
+            By day, I work as an <span class="text-gray-800 dark:text-gray-200">Application Programmer Analyst at the University of Toronto Libraries</span>, building and maintaining applications that serve thousands of researchers. By night, I run <span class="text-gray-800 dark:text-gray-200">Codepiercer</span>, where I freelance on dynamic web solutions — everything from static sites to high-demand applications with real-time features.
+          </p>
+          <p>
+            I'm a big fan of <span class="text-gray-800 dark:text-gray-200">Docker</span>, self-hosted infrastructure, serverless architecture, and clean deployments. When I'm not coding, you'll find me tinkering with DIY projects or playing board games.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-24 px-6 bg-gray-100/50 dark:bg-gray-900/50">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-3">
+          <span class="text-emerald-500 dark:text-emerald-400 font-mono text-lg">//</span> Projects
+        </h2>
+        <div class="h-px bg-gray-200 dark:bg-gray-800 mb-8"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Pennywise -->
+          <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:border-emerald-400/30 transition-colors">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Pennywise</h3>
+              <span class="text-xs bg-emerald-400/10 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded font-mono">2023</span>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Personal finance tracker and budgeting app. Track expenses, create budgets, and manage payees with comprehensive reports.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded">SvelteKit</span>
+              <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded">CockroachDB</span>
+              <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded">Tailwind</span>
+            </div>
+            <div class="flex gap-4 text-sm">
+              <a href="http://pennywise.jana19.dev/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-500 dark:hover:text-emerald-300 transition-colors">Live &rarr;</a>
+              <a href="https://github.com/jana19-dev/pennywise" target="_blank" rel="noopener noreferrer" class="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">GitHub</a>
+            </div>
+          </div>
+
+          <!-- Entryscanner -->
+          <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:border-emerald-400/30 transition-colors">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Entryscanner</h3>
+              <span class="text-xs bg-emerald-400/10 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded font-mono">2023</span>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Web application for library security staff to manage and verify patron access with barcode lookups and real-time event handling.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded">SvelteKit</span>
+              <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded">MariaDB</span>
+              <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded">RabbitMQ</span>
+            </div>
+          </div>
+
+          <!-- Tvupweb -->
+          <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:border-emerald-400/30 transition-colors">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Tvupweb</h3>
+              <span class="text-xs bg-emerald-400/10 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded font-mono">2021</span>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Admin portal with multi-role access, OTP login, SMS integration via Twilio, real-time tracking, and PDF report generation.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded">Svelte</span>
+              <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded">GraphQL</span>
+              <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded">PostgreSQL</span>
+            </div>
+          </div>
+
+          <!-- MyMedia -->
+          <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:border-emerald-400/30 transition-colors">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">MyMedia</h3>
+              <span class="text-xs bg-emerald-400/10 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded font-mono">2021</span>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Archival storage and streaming platform for University of Toronto. Upload, share, and stream videos with a custom player.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded">React</span>
+              <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded">GraphQL</span>
+              <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded">Golang</span>
+            </div>
+            <div class="flex gap-4 text-sm">
+              <a href="https://mymedia.library.utoronto.ca/help" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-500 dark:hover:text-emerald-300 transition-colors">Live &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Codenames -->
+          <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:border-emerald-400/30 transition-colors">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Codenames</h3>
+              <span class="text-xs bg-emerald-400/10 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded font-mono">2020</span>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Online implementation of the popular board game Codenames. Find your team's words from hints given by the spymaster.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded">React</span>
+              <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded">Firebase</span>
+            </div>
+            <div class="flex gap-4 text-sm">
+              <a href="https://codenames.jana19.dev" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-500 dark:hover:text-emerald-300 transition-colors">Live &rarr;</a>
+              <a href="https://github.com/jana19-dev/codenames" target="_blank" rel="noopener noreferrer" class="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">GitHub</a>
+            </div>
+          </div>
+
+          <!-- Viscodex -->
+          <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 hover:border-emerald-400/30 transition-colors">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Viscodex</h3>
+              <span class="text-xs bg-emerald-400/10 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded font-mono">2017</span>
+            </div>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mb-4">Tool for building models of physical collation of manuscripts and visualizing them as detailed, downloadable diagrams.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded">React</span>
+              <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded">Redux</span>
+              <span class="text-xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded">Rails</span>
+            </div>
+            <div class="flex gap-4 text-sm">
+              <a href="https://viscodex.library.utoronto.ca/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-500 dark:hover:text-emerald-300 transition-colors">Live &rarr;</a>
+              <a href="https://github.com/utlib/VisualCollation" target="_blank" rel="noopener noreferrer" class="text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">GitHub</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="py-24 px-6">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-3">
+          <span class="text-emerald-500 dark:text-emerald-400 font-mono text-lg">//</span> Experience
+        </h2>
+        <div class="h-px bg-gray-200 dark:bg-gray-800 mb-8"></div>
+        <div class="relative border-l-2 border-gray-200 dark:border-gray-800 ml-4 space-y-10">
+
+          <!-- UofT -->
+          <div class="relative pl-8">
+            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 dark:bg-emerald-400 border-4 border-gray-50 dark:border-gray-950"></div>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Application Programmer Analyst</h3>
+              <span class="text-sm text-gray-400 dark:text-gray-500 font-mono">2016 &ndash; Present</span>
+            </div>
+            <a href="https://onesearch.library.utoronto.ca/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 text-sm hover:text-emerald-500 dark:hover:text-emerald-300 transition-colors">University of Toronto Libraries</a>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mt-2">Developing and maintaining applications for the library system. Leading system migrations, GitLab CI implementation, and Docker orchestration.</p>
+          </div>
+
+          <!-- Codepiercer -->
+          <div class="relative pl-8">
+            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-emerald-500 dark:bg-emerald-400 border-4 border-gray-50 dark:border-gray-950"></div>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Director / Freelancer</h3>
+              <span class="text-sm text-gray-400 dark:text-gray-500 font-mono">2014 &ndash; Present</span>
+            </div>
+            <a href="https://codepiercer.org/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 text-sm hover:text-emerald-500 dark:hover:text-emerald-300 transition-colors">Codepiercer</a>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mt-2">Building dynamic web solutions — from static websites to high-demand applications with real-time features. Specializing in Docker Swarm deployments and serverless architecture.</p>
+          </div>
+
+          <!-- HiTech Bay -->
+          <div class="relative pl-8">
+            <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600 border-4 border-gray-50 dark:border-gray-950"></div>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Online Sales Technician</h3>
+              <span class="text-sm text-gray-400 dark:text-gray-500 font-mono">2014 &ndash; 2015</span>
+            </div>
+            <a href="https://www.hitechbay.com/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 text-sm hover:text-emerald-500 dark:hover:text-emerald-300 transition-colors">HiTech Bay</a>
+            <p class="text-gray-500 dark:text-gray-400 text-sm mt-2">Managed online sales on Amazon and eBay. Handled sales logistics and computer systems repair.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 px-6 bg-gray-100/50 dark:bg-gray-900/50">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Get in touch</h2>
+        <p class="text-gray-500 dark:text-gray-400 mb-8">Have a project in mind or just want to say hi? Drop me a line.</p>
+        <a href="mailto:jana19.dev@gmail.com" class="inline-block bg-emerald-500 dark:bg-emerald-400 text-white dark:text-gray-950 font-semibold px-8 py-3 rounded-lg hover:bg-emerald-400 dark:hover:bg-emerald-300 transition-colors">
+          jana19.dev@gmail.com
+        </a>
+        <div class="flex justify-center gap-6 mt-8">
+          <a href="https://github.com/jana19-dev" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors" aria-label="GitHub">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/jana19" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors" aria-label="LinkedIn">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/jana19.dev" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors" aria-label="Instagram">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 border-t border-gray-200 dark:border-gray-800/50">
+    <div class="max-w-5xl mx-auto text-center text-sm text-gray-400 dark:text-gray-600">
+      <span class="font-mono text-gray-500">jana19.dev</span>
+      <span class="mx-2">&middot;</span>
+      &copy; 2026
+    </div>
+  </footer>
+
+</body>
+</html>

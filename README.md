@@ -1,10 +1,12 @@
-## Developer | Tech Enthusiast | Freelancer | Traveller | Foodie
-- 😎 &nbsp; Director of [CODEPIERCER](https://codepiercer.org/)
-- 🔭 &nbsp; Currently working at the [University of Toronto Libraries](https://onesearch.library.utoronto.ca)
-- 🌱 &nbsp; Passionate about creating exceptional product experiences with clean and maintainable code
-- 😍 &nbsp; Enthusiast of JavaScript
-- 🐳 &nbsp; Heavy user of Docker
-- 😄 &nbsp; Board games aficionado
-- 💬 &nbsp; Fan of [SyntaxFM](https://syntax.fm) podcast
+# jana19.dev
 
-## https://jana19.dev
+Personal portfolio and landing page for [jana19.dev](https://jana19.dev).
+
+## Stack
+
+- Static HTML + Tailwind CSS (CDN)
+- Deployed as a static site on Dokploy
+
+## Local Development
+
+Open `index.html` directly in a browser — no build step needed.
