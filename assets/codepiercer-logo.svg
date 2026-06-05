@@ -1,0 +1,13 @@
+<!-- Codepiercer logo (mark + wordmark). For light backgrounds; reuse on social, invoices, business cards, etc. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 64" fill="none">
+  <rect width="64" height="64" rx="15" fill="#0b1020"/>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 20 L13 32 L22 44" stroke="#e5e7eb" stroke-width="6"/>
+    <path d="M40 20 L49 32 L40 44" stroke="#e5e7eb" stroke-width="6"/>
+    <path d="M16 32 H47" stroke="#34d399" stroke-width="6"/>
+    <path d="M43 25 L51 32 L43 39" stroke="#34d399" stroke-width="6"/>
+  </g>
+  <text x="84" y="42" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-weight="800" font-size="32" letter-spacing="-0.5">
+    <tspan fill="#0b1020">Code</tspan><tspan fill="#10b981">piercer</tspan>
+  </text>
+</svg>

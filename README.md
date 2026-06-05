@@ -1,6 +1,6 @@
-# jana19.dev
+# codepiercer.dev
 
-Personal portfolio and landing page for [jana19.dev](https://jana19.dev).
+Personal portfolio and landing page for [Codepiercer](https://codepiercer.dev) — Jana's freelance web &amp; mobile development studio.
 
 ## Stack
 
@@ -10,3 +10,7 @@ Personal portfolio and landing page for [jana19.dev](https://jana19.dev).
 ## Local Development
 
 Open `index.html` directly in a browser — no build step needed.
+
+## Projects & screenshots
+
+Projects are defined in the `PROJECTS` array near the bottom of `index.html`. To showcase a project, drop screenshots into `assets/projects/<slug>/` named `1.png`, `2.png`, … — they appear on the card and in a lightbox gallery automatically. See [`assets/projects/README.md`](assets/projects/README.md) for the full convention.
