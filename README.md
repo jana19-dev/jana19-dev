@@ -1,6 +1,6 @@
 # codepiercer.dev
 
-Personal portfolio and landing page for [Codepiercer](https://codepiercer.dev) — Jana's freelance web &amp; mobile development studio.
+Landing page for [codepiercer](https://codepiercer.dev) — a Toronto-based freelance web &amp; mobile development studio. Founded and led by Jana.
 
 ## Stack
 
